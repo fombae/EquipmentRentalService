@@ -1,0 +1,27 @@
+<div class="form-container">
+    <form action="return.php" method="POST">
+
+
+        <!-- Additional form fields (optional) -->
+        <div class="input-row">
+            <label for="ncin">Ncin <em>(ID Number)</em>:</label>
+            <input type="text" id="ncin" name="ncin" placeholder="">
+
+        </div>
+
+        <div class="input-row">
+            <label for="equipment ">Equipment : </label>
+            <select id="equipment" name="equipment">
+                <option value=""> Choose an Equipment </option>
+                <?php foreach ( $equipments as $equipment ) : ?>
+                <?php echo '<option value="'.$equipment['ref'].'">'.$equipment['label'].'</option>';?>
+                <?php endforeach; ?>
+            </select>
+
+        </div>
+
+        <div class="submit-button">
+            <input type="submit" value="Cancel"> <input type="submit" value="Validate">
+        </div>
+    </form>
+</div>
